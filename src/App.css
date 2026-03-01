@@ -1,0 +1,308 @@
+/* react-notes/src/App.css */
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --primary: #3b82f6;
+  --accent: #f59e0b;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+  --header-font: 'Caveat', cursive;
+  --body-font: 'Inter', sans-serif;
+  --code-font: 'JetBrains Mono', monospace;
+  --ai-color: #c026d3;
+  --ai-bg: #fdf4ff;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-main);
+  background-color: var(--bg-color);
+  background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  margin: 0;
+  padding: 20px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 2px dashed var(--primary);
+}
+
+h1 {
+  font-family: var(--header-font);
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-family: var(--header-font);
+}
+
+.floating-btn {
+  position: fixed;
+  top: 20px;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.floating-btn:active { transform: scale(0.95); }
+
+.print-btn {
+  right: 20px;
+  background: var(--primary);
+}
+.print-btn:hover { background: #2563eb; }
+
+.ai-quiz-btn {
+  right: 140px;
+  background: var(--ai-color);
+}
+.ai-quiz-btn:hover { background: #a21caf; }
+
+.masonry-grid {
+  columns: 2 400px;
+  column-gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  opacity: 0.6;
+}
+
+.card.advanced::before { background: var(--accent); }
+
+h2 {
+  font-family: var(--header-font);
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 12px 0 6px 0;
+  color: var(--primary);
+}
+
+ul, ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+li { margin-bottom: 4px; }
+
+code {
+  font-family: var(--code-font);
+  background: var(--code-bg);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #b91c1c;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  margin: 8px 0;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: #0f172a;
+  font-size: 0.85em;
+}
+
+.highlight {
+  background: #fef3c7;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.diagram-container {
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 0.95em;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+th { background: #f8fafc; color: var(--text-muted); }
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background: #e0f2fe;
+  color: #0369a1;
+  margin-right: 5px;
+}
+
+.flex-row { display: flex; gap: 10px; align-items: flex-start; }
+.flex-col { flex: 1; }
+
+/* AI Features CSS */
+.ai-btn {
+  background: var(--ai-bg);
+  color: var(--ai-color);
+  border: 1px solid #f0abfc;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--body-font);
+  margin-bottom: 10px;
+  float: right;
+}
+.ai-btn:hover { background: #fae8ff; transform: scale(1.05); }
+
+.ai-response {
+  clear: both;
+  margin-top: 15px;
+  padding: 15px;
+  background: #faf5ff;
+  border-left: 4px solid var(--ai-color);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95em;
+  color: #4c1d95;
+  line-height: 1.5;
+}
+
+.ai-response p { margin-top: 0; margin-bottom: 10px; }
+.ai-response p:last-child { margin-bottom: 0; }
+.ai-response ul { padding-left: 20px; }
+
+.loading-text {
+  color: var(--ai-color);
+  font-style: italic;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+/* Modal CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+}
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 15px; right: 15px;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
+  color: #64748b;
+}
+.modal-title {
+  font-family: var(--header-font);
+  font-size: 2.2rem;
+  color: var(--ai-color);
+  margin-top: 0;
+  border-bottom: 2px dashed #f0abfc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+@media print {
+  body { 
+      background: white; 
+      padding: 0; 
+      font-size: 11px;
+  }
+  .floating-btn, .ai-btn { display: none !important; }
+  header { border: none; box-shadow: none; padding: 10px; margin-bottom: 10px; }
+  .card { 
+      box-shadow: none; 
+      border: 1px solid #ccc; 
+      padding: 10px;
+  }
+  .ai-response { border-left-color: #ccc; background: #f9f9f9; color: #333; }
+  .masonry-grid { columns: 2; column-gap: 15px; }
+  pre { padding: 6px; border: 1px solid #ddd; }
+  .diagram-container { padding: 5px; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
