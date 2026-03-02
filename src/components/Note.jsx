@@ -1,4 +1,3 @@
-// react-notes/src/components/Note.jsx
 import { useState, useRef } from 'react';
 import { callGemini } from '../utils/gemini';
 

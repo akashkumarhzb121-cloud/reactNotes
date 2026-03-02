@@ -1,4 +1,3 @@
-// react-notes/src/App.jsx
 import { useState, useEffect } from 'react';
 import mermaid from 'mermaid';
 import Header from './components/Header';

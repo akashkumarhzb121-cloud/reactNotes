@@ -1,4 +1,3 @@
-// react-notes/src/components/NotesList.jsx
 import Note from './Note';
 
 export default function NotesList() {
